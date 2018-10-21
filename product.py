@@ -14,9 +14,7 @@ class Template:
     validated = fields.Boolean('Validated', states=STATES, depends=DEPENDS)
 
 
-class ProductValidatedMixin:
-    __metaclass__ = PoolMeta
-
+class ProductValidatedMixin(object):
     @classmethod
     def __setup__(cls):
         super(ProductValidatedMixin, cls).__setup__()
