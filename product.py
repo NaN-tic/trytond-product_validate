@@ -7,9 +7,8 @@ from trytond.modules.product.product import STATES, DEPENDS
 __all__ = ['Template', 'InvoiceLine', 'SaleLine', 'PurchaseLine']
 
 
-class Template:
+class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
-    __metaclass__ = PoolMeta
 
     validated = fields.Boolean('Validated', states=STATES, depends=DEPENDS)
 
@@ -21,16 +20,13 @@ class ProductValidatedMixin(object):
         cls.product.domain.append(('template.validated', '=', True))
 
 
-class InvoiceLine(ProductValidatedMixin):
+class InvoiceLine(ProductValidatedMixin, metaclass=PoolMeta):
     __name__ = 'account.invoice.line'
-    __metaclass__ = PoolMeta
 
 
-class SaleLine(ProductValidatedMixin):
+class SaleLine(ProductValidatedMixin, metaclass=PoolMeta):
     __name__ = 'sale.line'
-    __metaclass__ = PoolMeta
 
 
-class PurchaseLine(ProductValidatedMixin):
+class PurchaseLine(ProductValidatedMixin, metaclass=PoolMeta):
     __name__ = 'purchase.line'
-    __metaclass__ = PoolMeta
