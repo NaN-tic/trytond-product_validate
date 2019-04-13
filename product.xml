@@ -11,11 +11,6 @@
             <field name="user" ref="res.user_admin"/>
             <field name="group" ref="group_product_validate"/>
         </record>
-        <record model="res.user-res.group"
-            id="user_trigger_group_product_admin">
-            <field name="user" ref="res.user_trigger"/>
-            <field name="group" ref="group_product_validate"/>
-        </record>
         <record model="ir.model.field.access"
                 id="model_field_access_product_validated">
             <field name="field"
