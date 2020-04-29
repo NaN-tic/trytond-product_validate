@@ -2,15 +2,13 @@
 # the full copyright notices and license terms.
 from trytond.model import fields
 from trytond.pool import PoolMeta
-from trytond.modules.product.product import STATES, DEPENDS
 
 __all__ = ['Template', 'InvoiceLine', 'SaleLine', 'PurchaseLine']
 
 
 class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
-
-    validated = fields.Boolean('Validated', states=STATES, depends=DEPENDS)
+    validated = fields.Boolean('Validated')
 
 
 class ProductValidatedMixin(object):
