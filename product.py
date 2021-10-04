@@ -12,6 +12,8 @@ class Template(metaclass=PoolMeta):
 
 
 class ProductValidatedMixin(object):
+    __slots__ = ()
+
     @classmethod
     def __setup__(cls):
         super(ProductValidatedMixin, cls).__setup__()
