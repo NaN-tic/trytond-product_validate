@@ -10,6 +10,15 @@ class Template(metaclass=PoolMeta):
     __name__ = 'product.template'
     validated = fields.Boolean('Validated')
 
+    @classmethod
+    def copy(cls, templates, default=None):
+        if default is None:
+            default = {}
+        else:
+            default = default.copy()
+        default.setdefault('validated', None)
+        return super(Template, cls).copy(templates, default=default)
+
 
 class ProductValidatedMixin(object):
     __slots__ = ()
