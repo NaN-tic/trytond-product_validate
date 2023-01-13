@@ -20,6 +20,10 @@ class Template(metaclass=PoolMeta):
         return super(Template, cls).copy(templates, default=default)
 
 
+class Product(metaclass=PoolMeta):
+    __name__ = 'product.product'
+
+
 class ProductValidatedMixin(object):
     __slots__ = ()
 
