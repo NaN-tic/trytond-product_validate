@@ -11,17 +11,15 @@
             <field name="user" ref="res.user_admin"/>
             <field name="group" ref="group_product_validate"/>
         </record>
-        <record model="ir.model.field.access"
-                id="model_field_access_product_validated">
-            <field name="field"
-                search="[('model.model', '=', 'product.template'), ('name', '=', 'validated')]"/>
+        <record model="ir.model.field.access" id="model_field_access_product_validated">
+            <field name="model">product.template</field>
+            <field name="field">validated</field>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="False"/>
         </record>
-        <record model="ir.model.field.access"
-                id="model_field_access_product_validated_group_party_validate">
-            <field name="field"
-                search="[('model.model', '=', 'product.template'), ('name', '=', 'validated')]"/>
+        <record model="ir.model.field.access" id="model_field_access_product_validated_group_party_validate">
+            <field name="model">product.template</field>
+            <field name="field">validated</field>
             <field name="group" ref="group_product_validate"/>
             <field name="perm_read" eval="True"/>
             <field name="perm_write" eval="True"/>
