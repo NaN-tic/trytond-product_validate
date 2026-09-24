@@ -6,11 +6,6 @@
         <record model="res.group" id="group_product_validate">
             <field name="name">Product Validation</field>
         </record>
-        <record model="res.user-res.group"
-            id="user_admin_group_product_admin">
-            <field name="user" ref="res.user_admin"/>
-            <field name="group" ref="group_product_validate"/>
-        </record>
         <record model="ir.model.field.access" id="model_field_access_product_validated">
             <field name="model">product.template</field>
             <field name="field">validated</field>
